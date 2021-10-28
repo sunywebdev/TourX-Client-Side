@@ -1,10 +1,10 @@
 const firebaseConfig = {
-	apiKey: "AIzaSyBi-YkKmOFqYrOuuggD3fg2ICfTGHbRgns",
-	authDomain: "voluntary-soldier.firebaseapp.com",
-	projectId: "voluntary-soldier",
-	storageBucket: "voluntary-soldier.appspot.com",
-	messagingSenderId: "384950229094",
-	appId: "1:384950229094:web:659e1052ade11cdea535a7",
-	measurementId: "G-JJYEGW1Z99",
+	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+	storageBucket: process.env.REACT_APP_FIREBASE_STROAGE_BUCKET,
+	messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+	appId: process.env.REACT_APP_FIREBASE_APP_ID,
+	measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 export default firebaseConfig;
