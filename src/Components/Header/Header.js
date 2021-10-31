@@ -1,26 +1,95 @@
 import React from "react";
 import { Container, Image, Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../context/useAuth";
 
 const Header = () => {
+	const activeStyle = {
+		fontWeight: "bold",
+		color: "red",
+	};
+
 	const { user, logOut } = useAuth();
 	console.log(user);
 	return (
-		<Navbar collapseOnSelect expand='md' bg='dark' variant='dark'>
+		<Navbar
+			collapseOnSelect
+			expand='md'
+			bg='dark'
+			variant='dark'
+			className='sticky-top'>
 			<Container>
-				<Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
+				<Navbar.Brand>
+					<Link
+						activeStyle={activeStyle}
+						className='text-decoration-none fs-3'
+						to='/'>
+						TourX Agency
+					</Link>
+				</Navbar.Brand>
 				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse id='responsive-navbar-nav'>
 					<Nav className='me-auto'>
 						<Nav.Link>
-							<NavLink to='/'>Home</NavLink>
+							<NavLink
+								activeStyle={activeStyle}
+								className='text-decoration-none '
+								exact
+								to='/'>
+								Home
+							</NavLink>
+						</Nav.Link>
+						{!user?.uid && (
+							<>
+								<Nav.Link>
+									<NavLink
+										activeStyle={activeStyle}
+										className='text-decoration-none '
+										to='/login'>
+										Login
+									</NavLink>
+								</Nav.Link>
+								<Nav.Link>
+									<NavLink
+										activeStyle={activeStyle}
+										className='text-decoration-none '
+										to='/SignUp'>
+										SignUp
+									</NavLink>
+								</Nav.Link>
+							</>
+						)}
+						<Nav.Link>
+							<NavLink
+								activeStyle={activeStyle}
+								className='text-decoration-none '
+								to='/manageorders'>
+								Manage Orders
+							</NavLink>
 						</Nav.Link>
 						<Nav.Link>
-							<NavLink to='/login'>Login</NavLink>
+							<NavLink
+								activeStyle={activeStyle}
+								className='text-decoration-none '
+								to='/orders'>
+								My Orders
+							</NavLink>
 						</Nav.Link>
 						<Nav.Link>
-							<NavLink to='SignUp'>SignUp</NavLink>
+							<NavLink
+								activeStyle={activeStyle}
+								className='text-decoration-none '
+								to='/addpackage'>
+								Add Tour Package
+							</NavLink>
+						</Nav.Link>
+						<Nav.Link>
+							<NavLink
+								activeStyle={activeStyle}
+								className='text-decoration-none '
+								to='/admin'>
+								Admin
+							</NavLink>
 						</Nav.Link>
 					</Nav>
 					{user?.email && (

@@ -3,7 +3,7 @@ import { FloatingLabel, Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useHistory, useLocation } from "react-router";
-import useAuth from "../../context/useAuth";
+import useAuth from "../../../context/useAuth";
 
 const Login = () => {
 	const { signInUsingGoogle, signInWithEmailPassword, auth, error } = useAuth();
