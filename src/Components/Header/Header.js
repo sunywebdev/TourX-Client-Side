@@ -83,14 +83,16 @@ const Header = () => {
 								Add Tour Package
 							</NavLink>
 						</Nav.Link>
-						<Nav.Link>
-							<NavLink
-								activeStyle={activeStyle}
-								className='text-decoration-none '
-								to='/admin'>
-								Admin
-							</NavLink>
-						</Nav.Link>
+						{user?.email === "suny.w68@gmail.com" && (
+							<Nav.Link>
+								<NavLink
+									activeStyle={activeStyle}
+									className='text-decoration-none '
+									to='/admin'>
+									Admin
+								</NavLink>
+							</Nav.Link>
+						)}
 					</Nav>
 					{user?.email && (
 						<Nav>
