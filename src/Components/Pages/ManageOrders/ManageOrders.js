@@ -10,16 +10,19 @@ const ManageOrders = () => {
 	const [state, setState] = useState([]);
 	const [states, setStates] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/pending`)
+		fetch(`https://morning-garden-49984.herokuapp.com/pending`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
 	}, [state, states]);
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
 		axios
-			.put(`http://localhost:5000/pendingconfirm/${data?.id}`, {
-				orderStatus: "Confirm",
-			})
+			.put(
+				`https://morning-garden-49984.herokuapp.com/pendingconfirm/${data?.id}`,
+				{
+					orderStatus: "Confirm",
+				},
+			)
 			.then(function (response) {
 				alert("Successfully Updated");
 				setState(data);
@@ -32,7 +35,7 @@ const ManageOrders = () => {
 		const proceed = window.confirm("Are you sure you want to delete");
 		if (proceed) {
 			axios
-				.delete(`http://localhost:5000/delete/${id}`)
+				.delete(`https://morning-garden-49984.herokuapp.com/delete/${id}`)
 				.then(function (response) {
 					alert("Successfully deleted");
 					setStates(id);

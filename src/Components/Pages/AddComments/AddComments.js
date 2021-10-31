@@ -9,7 +9,7 @@ const AddPackage = () => {
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
 		axios
-			.post("http://localhost:5000/comments", data)
+			.post("https://morning-garden-49984.herokuapp.com/comments", data)
 			.then(function (response) {
 				alert("Successfully added");
 			})

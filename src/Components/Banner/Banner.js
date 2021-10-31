@@ -5,7 +5,7 @@ import "./Banner.css";
 const Banner = () => {
 	const [slides, setSlides] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/slides`)
+		fetch(`https://morning-garden-49984.herokuapp.com/slides`)
 			.then((res) => res.json())
 			.then((data) => setSlides(data));
 	}, []);

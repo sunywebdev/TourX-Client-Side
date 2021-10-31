@@ -7,7 +7,7 @@ const AddSlide = () => {
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
 		axios
-			.post("http://localhost:5000/slides", data)
+			.post("https://morning-garden-49984.herokuapp.com/slides", data)
 			.then(function (response) {
 				alert("Successfully added");
 			})

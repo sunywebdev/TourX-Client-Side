@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const DoYouKnow = () => {
 	const [knowledges, setKnowledges] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/knowledge`)
+		fetch(`https://morning-garden-49984.herokuapp.com/knowledge`)
 			.then((res) => res.json())
 			.then((data) => setKnowledges(data));
 	}, []);

@@ -7,7 +7,7 @@ const SingleNews = () => {
 	const { newsId } = useParams();
 	const [news, setNews] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/news/${newsId}`)
+		fetch(`https://morning-garden-49984.herokuapp.com/news/${newsId}`)
 			.then((res) => res.json())
 			.then((data) => setNews(data));
 	}, []);

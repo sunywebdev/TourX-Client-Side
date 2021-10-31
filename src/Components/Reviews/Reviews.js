@@ -49,7 +49,7 @@ const Reviews = () => {
 
 	const [comments, setComments] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/comments`)
+		fetch(`https://morning-garden-49984.herokuapp.com/comments`)
 			.then((res) => res.json())
 			.then((data) => setComments(data));
 	}, []);
