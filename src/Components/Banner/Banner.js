@@ -18,9 +18,9 @@ const Banner = () => {
 							key={slide?._id}
 							className='carousel  position-relative'>
 							<img className='d-block w-100' src={slide?.photo} alt='' />
-							<Carousel.Caption className='position-absolute top-50 '>
+							<Carousel.Caption className='position-absolute '>
 								<div className='text-light'>
-									<h1 className='display-1 fw-bold'>{slide?.text}</h1>
+									<h1 className='display-2 fw-bold'>{slide?.text}</h1>
 									<h5>{slide?.subText}</h5>
 									<p className='mt-4'>
 										<a className='btn btn-lg bg-1 text-light' href='#Packages'>

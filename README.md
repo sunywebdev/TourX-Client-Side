@@ -2,7 +2,7 @@
 
 This is a Tourism Agency related Website.This site is hosted live <a href='https://tourx-agency.web.app/'> Here</a>
 
-<p>This is designed as user-friendly so that you could use it without any disturbance. Here you could make your Vacation Tours Easy and Peacefully that you will more than satisfied.</p>
+<p>This is designed as user-friendly so that you could use it without any disturbance. Here you could make your Vacation Tours Easy and Peacefully that you will fill more than satisfied.</p>
 
 Features :-
 
