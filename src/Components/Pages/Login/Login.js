@@ -20,7 +20,7 @@ const Login = () => {
 			: "";
 	const handleGoogleLogin = () => {
 		signInUsingGoogle().then((result) => {
-			history.push(location?.state?.from || "/home");
+			history.push(-2);
 		});
 	};
 	const { register, handleSubmit } = useForm();

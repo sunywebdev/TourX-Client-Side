@@ -8,7 +8,7 @@ const ManageOrders = () => {
 	const { user } = useAuth();
 	const [packages, setPackages] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/pending`)
+		fetch(`https://morning-garden-49984.herokuapp.com/pending`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
 	}, []);
@@ -35,9 +35,12 @@ const ManageOrders = () => {
 	const onSubmit = (data) => {
 		console.log(data);
 		axios
-			.put(`http://localhost:5000/pendingconfirm/${data?.id}`, {
-				orderStatus: "Confirm",
-			})
+			.put(
+				`https://morning-garden-49984.herokuapp.com/pendingconfirm/${data?.id}`,
+				{
+					orderStatus: "Confirm",
+				},
+			)
 			.then(function (response) {
 				alert("Successfully Updated");
 			})
@@ -45,7 +48,19 @@ const ManageOrders = () => {
 				console.log(error);
 			});
 	};
-
+	const deleted = (id) => {
+		const proceed = window.confirm("Are you sure you want to delete");
+		if (proceed) {
+			axios
+				.delete(`https://morning-garden-49984.herokuapp.com/delete/${id}`)
+				.then(function (response) {
+					alert("Successfully deleted");
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		}
+	};
 	let key = 1;
 	return (
 		<Container className='mt-5'>
@@ -59,6 +74,7 @@ const ManageOrders = () => {
 						<th>Name</th>
 						<th>Going To</th>
 						<th>Tour Status</th>
+						{user?.email === "suny.w68@gmail.com" && <th>Delete(Admin)</th>}
 					</tr>
 				</thead>
 				<tbody>
@@ -100,6 +116,15 @@ const ManageOrders = () => {
 									<h6> Confirmed </h6>
 								)}
 							</td>
+							{user?.email === "suny.w68@gmail.com" && (
+								<td>
+									<Button
+										onClick={() => deleted(package1?._id)}
+										className='py-0 ms-2'>
+										Delete
+									</Button>
+								</td>
+							)}
 						</tr>
 					))}
 				</tbody>

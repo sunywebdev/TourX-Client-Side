@@ -52,7 +52,7 @@ const SignUp = () => {
 						defaultValue={user?.displayName}
 						type='text'
 						placeholder='John Doe'
-						{...register("name", { required: true })}
+						{...register("displayName", { required: true })}
 					/>
 				</FloatingLabel>
 				<FloatingLabel

@@ -7,7 +7,7 @@ const SingleKnowledge = () => {
 	const { knowledgeId } = useParams();
 	const [knowledge, setKnowledge] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/knowledge/${knowledgeId}`)
+		fetch(`https://morning-garden-49984.herokuapp.com/knowledge/${knowledgeId}`)
 			.then((res) => res.json())
 			.then((data) => setKnowledge(data));
 	}, []);

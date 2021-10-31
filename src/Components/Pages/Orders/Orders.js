@@ -8,7 +8,7 @@ const Orders = () => {
 	const { user } = useAuth();
 	const [packages, setPackages] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:5000/confirmed/${user?.uid}`)
+		fetch(`https://morning-garden-49984.herokuapp.com/confirmed/${user?.uid}`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,7 +36,7 @@ const Orders = () => {
 		const proceed = window.confirm("Are you sure you want to delete");
 		if (proceed) {
 			axios
-				.delete(`http://localhost:5000/delete/${id}`)
+				.delete(`https://morning-garden-49984.herokuapp.com/delete/${id}`)
 				.then(function (response) {
 					alert("Successfully deleted");
 				})

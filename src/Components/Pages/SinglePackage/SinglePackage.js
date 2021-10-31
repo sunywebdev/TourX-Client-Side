@@ -26,7 +26,7 @@ const SinglePackage = () => {
 	const [packages, setPackages] = useState([]);
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/packages/${productId}`)
+		fetch(`https://morning-garden-49984.herokuapp.com/packages/${productId}`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
 	}, []);
@@ -52,7 +52,7 @@ const SinglePackage = () => {
 	console.log(details);
 	const onSubmit = (data) => {
 		axios
-			.post("http://localhost:5000/pending", details)
+			.post("https://morning-garden-49984.herokuapp.com/pending", details)
 			.then(function (response) {
 				alert("Successfully added, Going to preview Or Update page");
 				history.push(`/order/${packages?.productId}`);

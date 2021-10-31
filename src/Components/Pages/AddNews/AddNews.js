@@ -8,7 +8,7 @@ const AddPackage = () => {
 	const onSubmit = (data) => {
 		console.log(data);
 		axios
-			.post("http://localhost:5000/news", data)
+			.post("https://morning-garden-49984.herokuapp.com/news", data)
 			.then(function (response) {
 				alert("Successfully added");
 			})
