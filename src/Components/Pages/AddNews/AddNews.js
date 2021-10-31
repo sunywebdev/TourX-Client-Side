@@ -19,13 +19,14 @@ const AddPackage = () => {
 
 	return (
 		<Container>
-			<h2 className='fw-bold py-4'>Add a new News</h2>
+			<h2 className='fw-bold py-4 text-color-1'>Add a new News</h2>
 			<Form className='col-md-7 mx-auto' onSubmit={handleSubmit(onSubmit)}>
 				<FloatingLabel
 					controlId='floatingInput'
 					label='News ID'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='News ID'
 						{...register("newsId", { required: true })}
@@ -36,6 +37,7 @@ const AddPackage = () => {
 					label='Photo URL'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='Photo URL'
 						{...register("photourl", { required: true })}
@@ -46,6 +48,7 @@ const AddPackage = () => {
 					label='News Author'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='News Author'
 						{...register("author", { required: true })}
@@ -56,6 +59,7 @@ const AddPackage = () => {
 					label='News Headline'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='News Headline'
 						{...register("headline", { required: true })}
@@ -66,6 +70,7 @@ const AddPackage = () => {
 					label='News Date'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='date'
 						placeholder='News Date'
 						{...register("date", { required: true })}
@@ -76,6 +81,7 @@ const AddPackage = () => {
 					label='News Catagory'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='News Catagory'
 						{...register("folder", { required: true })}
@@ -86,6 +92,7 @@ const AddPackage = () => {
 					label='News Description'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						as='textarea'
 						placeholder='News Description'
@@ -93,7 +100,7 @@ const AddPackage = () => {
 						{...register("description", { required: true })}
 					/>
 				</FloatingLabel>
-				<Button type='submit' className='my-2 mx-1'>
+				<Button type='submit' className='my-2 mx-1 bg-1 border-11'>
 					Add News
 				</Button>
 			</Form>

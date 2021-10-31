@@ -10,7 +10,7 @@ const News = () => {
 			.then((data) => setNews(data));
 	}, []);
 	return (
-		<Container className='mt-5'>
+		<Container className='my-5'>
 			<div className='section-head my-4'>
 				<h2 className='text-color-1'>News And Blogs</h2>
 				<h5>
@@ -23,24 +23,22 @@ const News = () => {
 				<Row xs={1} md={2} lg={3} className='g-4'>
 					{news?.map((news1) => (
 						<Col key={news1?._id} className='text-start'>
-							<Card
-								className='border-0 bg-light '
-								style={{ borderRadius: "19px" }}>
+							<Card className=' border-11' style={{ borderRadius: "19px" }}>
 								<div className='position-relative'>
 									<Card.Img
 										variant='top'
 										src={news1?.photourl}
 										style={{ borderRadius: "19px 19px 0 0" }}
 									/>
-									<span className='position-absolute bottom-0 start-0  badge m-2 p-2 rounded-pill bg-danger'>
+									<span className='position-absolute bottom-0 start-0  badge m-2 p-2 rounded-pill bg-1'>
 										<i className='far fa-user'></i>&nbsp; {news1?.author}
 									</span>
-									<span className='position-absolute bottom-0 end-0  badge m-2  p-2 rounded-pill bg-danger'>
+									<span className='position-absolute bottom-0 end-0  badge m-2  p-2 rounded-pill bg-1'>
 										<i className='far fa-calendar-alt'></i>&nbsp; {news1?.date}
 									</span>
 								</div>
 								<Card.Body>
-									<Card.Title className='fw-bold text-1'>
+									<Card.Title className='fw-bold text-color-1'>
 										{(news1?.headline).slice(0, 60)}....
 									</Card.Title>
 									<Card.Text>
@@ -49,7 +47,7 @@ const News = () => {
 									<Link
 										exact
 										to={`/news/${news1?._id}`}
-										className='float-start text-1 fw-bold underline-bold'>
+										className='float-start text-color-1 fw-bold underline-bold'>
 										Read More +
 									</Link>
 								</Card.Body>

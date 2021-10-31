@@ -33,10 +33,10 @@ const Package = () => {
 							<Card
 								className=' position-relative pCard'
 								style={{ borderRadius: "15px" }}>
-								<span className='position-absolute top-0 start-0 mt-2 ms-2 badge rounded-pill bg-danger'>
+								<span className='position-absolute top-0 start-0 mt-2 ms-2 badge rounded-pill bg-1'>
 									Featured
 								</span>
-								<span className='position-absolute top-0 end-0 mt-2 me-2 badge rounded-pill bg-danger'>
+								<span className='position-absolute top-0 end-0 mt-2 me-2 badge rounded-pill bg-1'>
 									-20%
 								</span>
 								<Card.Img
@@ -46,14 +46,17 @@ const Package = () => {
 								/>
 								<Card.Body className='text-start'>
 									<p>
-										<i className='fas fa-map-marker-alt'></i> {package1?.place}
+										<i className='fas fa-map-marker-alt text-color-1'></i>{" "}
+										{package1?.place}
 									</p>
-									<h5>{(package1?.productName).slice(0, 40)}...</h5>
+									<h5 className='text-color-1'>
+										{(package1?.productName).slice(0, 40)}...
+									</h5>
 									<p>
 										<Rating
 											initialRating={package1?.productReviewAvg}
-											emptySymbol='far fa-star '
-											fullSymbol='fas fa-star '
+											emptySymbol='far fa-star text-color-1 '
+											fullSymbol='fas fa-star text-color-1'
 											readonly
 										/>
 										&nbsp;
@@ -63,21 +66,25 @@ const Package = () => {
 										horizontal
 										className='justify-content-between align-items-center'>
 										<ListGroup.Item className='border-0 p-0'>
-											<i className='far fa-clock'></i>{" "}
+											<i className='far fa-clock text-color-1'></i>{" "}
 											{package1?.productDuration} Days
 										</ListGroup.Item>
 										<ListGroup.Item className='border-0 p-0'>
-											<i className='fas fa-bolt'></i> from&nbsp;
-											<span className='fs-4 fw-bold'>
+											<i className='fas fa-bolt text-color-1'></i> from&nbsp;
+											<span className='fs-4 fw-bold '>
 												${package1?.productPrice}
 											</span>
 										</ListGroup.Item>
 									</ListGroup>
 								</Card.Body>
 								<Button
-									className='w-100'
+									className='w-100 bg-1 border-0'
 									style={{ borderRadius: "0 0 15px 15px " }}>
-									<Link to={`/packages/${package1?._id}`}>Book Now</Link>
+									<Link
+										className='text-decoration-none text-light'
+										to={`/packages/${package1?._id}`}>
+										Book Now
+									</Link>
 								</Button>
 							</Card>
 						</Col>

@@ -11,27 +11,8 @@ const Orders = () => {
 		fetch(`https://morning-garden-49984.herokuapp.com/confirmed/${user?.uid}`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	/* 	const details = {
-		adultQuantity: packages?.adultQuantity,
-		childQuantity: packages?.childQuantity,
-		userId: user?.uid,
-		name: user?.displayName,
-		email: user?.email,
-		phoneNumber: packages?.phoneNumber,
-		address: packages?.address,
-		specialRequirements: packages?.specialRequirements,
-		productId: packages?.productId,
-		productName: packages?.productName,
-		productPlace: packages?.place,
-		productDuration: packages?.productDuration,
-		productPrice: packages?.productPrice,
-		tourDate: packages?.tourDate,
-		orderTime: packages?.orderTime,
-        orderStatus: "Pending",
-	};
-	console.log(details); */
+
 	const deleted = (id) => {
 		const proceed = window.confirm("Are you sure you want to delete");
 		if (proceed) {
@@ -50,15 +31,15 @@ const Orders = () => {
 	return (
 		<Container className='mt-5'>
 			<div className='section-head my-4'>
-				<h2 className='text-color-1'>Manage Orders</h2>
+				<h2 className='text-color-1 fw-bold'>Manage Orders</h2>
 			</div>
-			<Table striped bordered hover className='align-middle'>
+			<Table className='align-middle'>
 				<thead>
-					<tr>
+					<tr className='text-color-1'>
 						<th>#</th>
 						<th>Name</th>
 						<th>Going To</th>
-						<th>Tour Status</th>
+						<th>Delete Order</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -72,7 +53,7 @@ const Orders = () => {
 									<td>
 										<Button
 											onClick={() => deleted(package1?._id)}
-											className='py-0 ms-2'>
+											className='py-0 ms-2 bg-1 border-11'>
 											Delete
 										</Button>
 									</td>

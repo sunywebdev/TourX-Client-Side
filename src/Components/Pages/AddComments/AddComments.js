@@ -21,13 +21,14 @@ const AddPackage = () => {
 
 	return (
 		<Container>
-			<h2 className='fw-bold py-4'>Add a new Comment</h2>
+			<h2 className='fw-bold py-4 text-color-1'>Add a new Comment</h2>
 			<Form className='col-md-7 mx-auto' onSubmit={handleSubmit(onSubmit)}>
 				<FloatingLabel
 					controlId='floatingInput'
 					label='User ID'
-					className='mb-3'>
+					className='mb-3 '>
 					<Form.Control
+						className='border-11'
 						defaultValue={user?.uid}
 						type='text'
 						placeholder='User ID'
@@ -39,6 +40,7 @@ const AddPackage = () => {
 					label='User Photo link'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='User Photo link'
 						{...register("photoLink", { required: true })}
@@ -49,6 +51,7 @@ const AddPackage = () => {
 					label='User Name'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='User Name'
 						{...register("userName", { required: true })}
@@ -56,6 +59,7 @@ const AddPackage = () => {
 				</FloatingLabel>
 				<FloatingLabel controlId='floatingInput' label='Star' className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='number'
 						placeholder='Star'
 						{...register("star", { required: true })}
@@ -66,6 +70,7 @@ const AddPackage = () => {
 					label='Comment'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						as='textarea'
 						placeholder='Comment'
@@ -73,7 +78,7 @@ const AddPackage = () => {
 						{...register("comment", { required: true })}
 					/>
 				</FloatingLabel>
-				<Button type='submit' className='my-2 mx-1'>
+				<Button type='submit' className='my-2 mx-1 bg-1 border-11'>
 					Add Comment
 				</Button>
 			</Form>

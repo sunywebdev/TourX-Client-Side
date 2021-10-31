@@ -28,7 +28,7 @@ const SignUp = () => {
 			: "";
 	const handleGoogleLogin = () => {
 		signInUsingGoogle().then((result) => {
-			history.push(-1);
+			history.push(location?.state?.from || "/");
 		});
 	};
 	const onSubmit = (data) => {
@@ -37,7 +37,7 @@ const SignUp = () => {
 				updateProfiles(auth, data.displayName, data.photoURL);
 				// eslint-disable-next-line no-lone-blocks
 				{
-					user && history?.go(-1);
+					user && history?.go(-2);
 				}
 			},
 		);

@@ -28,25 +28,35 @@ const DoYouKnow = () => {
 			</div>
 			{knowledges.length > 0 ? (
 				<Row xs={1} md={2} lg={4} className='g-3'>
-					{knowledges?.map((knowledge) => (
-						<Col key={knowledge?._id}>
-							<Card style={{ width: "18rem" }} className='border-0  mx-auto'>
-								<Card.Img
-									style={{ width: "200px" }}
-									variant='top'
-									src={knowledge?.photoLink}
-									className='rounded-circle mx-auto'
-								/>
-								<Card.Body className='text-center'>
-									<Card.Title>{(knowledge?.title).slice(0, 40)}....</Card.Title>
-									<Card.Text>{(knowledge?.description).slice(0, 60)}</Card.Text>
-									<Button variant='primary'>
-										<Link to={`/knowledges/${knowledge?._id}`}>Read More</Link>
-									</Button>
-								</Card.Body>
-							</Card>
-						</Col>
-					))}
+					{knowledges
+						?.map((knowledge) => (
+							<Col key={knowledge?._id}>
+								<Card style={{ width: "18rem" }} className='border-0  mx-auto'>
+									<Card.Img
+										style={{ width: "200px" }}
+										variant='top'
+										src={knowledge?.photoLink}
+										className='rounded-circle mx-auto'
+									/>
+									<Card.Body className='text-center'>
+										<Card.Title className='text-color-1'>
+											{(knowledge?.title).slice(0, 40)}....
+										</Card.Title>
+										<Card.Text>
+											{(knowledge?.description).slice(0, 60)}
+										</Card.Text>
+										<Button variant='primary' className='bg-1 border-0'>
+											<Link
+												className='text-decoration-none text-light'
+												to={`/knowledges/${knowledge?._id}`}>
+												Read More
+											</Link>
+										</Button>
+									</Card.Body>
+								</Card>
+							</Col>
+						))
+						.slice(0, 4)}
 				</Row>
 			) : (
 				<>

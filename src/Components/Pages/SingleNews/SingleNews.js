@@ -12,8 +12,8 @@ const SingleNews = () => {
 			.then((data) => setNews(data));
 	}, []);
 	return (
-		<Container className='mt-2'>
-			<h2 className='fw-bold py-3 mt-2 text-1'>{news?.headline}</h2>
+		<Container className='mt-2 text-color-1'>
+			<h2 className='fw-bold py-3 mt-2'>{news?.headline}</h2>
 			<div className='clearfix'>
 				<img
 					src={news?.photourl}
@@ -21,16 +21,16 @@ const SingleNews = () => {
 					alt='...'
 				/>
 				<div className='row gx-0 pb-3'>
-					<div className='col'>
-						<i className='fas fa-user-alt text-1'></i> &nbsp;
+					<div className='col fw-bold text-color-1'>
+						<i className='fas fa-user-alt'></i> &nbsp;
 						{news?.author}
 					</div>
-					<div className='col'>
-						<i className='fas fa-calendar-alt text-1'></i> &nbsp;
+					<div className='col fw-bold text-color-1'>
+						<i className='fas fa-calendar-alt'></i> &nbsp;
 						{news?.date}
 					</div>
-					<div className='col'>
-						<i className='fas fa-folder text-1'></i> &nbsp; {news?.folder}
+					<div className='col fw-bold text-color-1'>
+						<i className='fas fa-folder'></i> &nbsp; {news?.folder}
 					</div>
 				</div>
 				<p className='text-secondary text-start'>{news?.description}</p>

@@ -4,6 +4,7 @@ import AddPackage from "../AddPackage/AddPackage";
 import AddNews from "../AddNews/AddNews";
 import AddKnowledge from "../AddKnowledge/AddKnowledge";
 import AddComments from "../AddComments/AddComments";
+import AddSlide from "../AddSlide/AddSlide";
 
 const Admin = () => {
 	return (
@@ -12,17 +13,35 @@ const Admin = () => {
 				<div className='row'>
 					<div className='col-md-3'>
 						<ListGroup>
-							<ListGroup.Item action href='#link1'>
+							<ListGroup.Item
+								action
+								href='#link1'
+								className='border-11 text-color-1 fw-bold'>
 								Add Package
 							</ListGroup.Item>
-							<ListGroup.Item action href='#link2'>
+							<ListGroup.Item
+								action
+								href='#link2'
+								className='border-11 text-color-1 fw-bold'>
 								Add News
 							</ListGroup.Item>
-							<ListGroup.Item action href='#link3'>
+							<ListGroup.Item
+								action
+								href='#link3'
+								className='border-11 text-color-1 fw-bold'>
 								Add Knowledge
 							</ListGroup.Item>
-							<ListGroup.Item action href='#link4'>
+							<ListGroup.Item
+								action
+								href='#link4'
+								className='border-11 text-color-1 fw-bold'>
 								Add Comments
+							</ListGroup.Item>
+							<ListGroup.Item
+								action
+								href='#link5'
+								className='border-11 text-color-1 fw-bold'>
+								Add Slides
 							</ListGroup.Item>
 						</ListGroup>
 					</div>
@@ -39,6 +58,9 @@ const Admin = () => {
 							</Tab.Pane>
 							<Tab.Pane eventKey='#link4'>
 								<AddComments></AddComments>
+							</Tab.Pane>
+							<Tab.Pane eventKey='#link5'>
+								<AddSlide></AddSlide>
 							</Tab.Pane>
 						</Tab.Content>
 					</div>

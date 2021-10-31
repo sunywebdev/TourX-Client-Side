@@ -19,13 +19,14 @@ const AddPackage = () => {
 
 	return (
 		<Container>
-			<h2 className='fw-bold py-4'>Add a new Package</h2>
+			<h2 className='fw-bold py-4 text-color-1'>Add a new Package</h2>
 			<Form className='col-md-7 mx-auto' onSubmit={handleSubmit(onSubmit)}>
 				<FloatingLabel
 					controlId='floatingInput'
 					label='Product ID'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='Product ID'
 						{...register("productId", { required: true })}
@@ -33,6 +34,7 @@ const AddPackage = () => {
 				</FloatingLabel>
 				<FloatingLabel controlId='floatingInput' label='Place' className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='Place'
 						{...register("place", { required: true })}
@@ -43,6 +45,7 @@ const AddPackage = () => {
 					label='Product Photo URL'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='Product Photo URL'
 						{...register("photo", { required: true })}
@@ -53,6 +56,7 @@ const AddPackage = () => {
 					label='Product Name'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='Product Name'
 						{...register("productName", { required: true })}
@@ -63,6 +67,7 @@ const AddPackage = () => {
 					label='Product Price'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='number'
 						placeholder='Product Price'
 						{...register("productPrice", { required: true })}
@@ -73,6 +78,7 @@ const AddPackage = () => {
 					label='Product Duration'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='Product Duration'
 						{...register("productDuration", { required: true })}
@@ -83,6 +89,7 @@ const AddPackage = () => {
 					label='Product Review Avrage'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='number'
 						placeholder='Product Review Avrage'
 						{...register("productReviewAvg", { required: true })}
@@ -93,6 +100,7 @@ const AddPackage = () => {
 					label='Product Review Count'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						placeholder='Product Review Count'
 						{...register("productReviewCount", { required: true })}
@@ -103,6 +111,7 @@ const AddPackage = () => {
 					label='Product Description'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='text'
 						as='textarea'
 						placeholder='Product Description'
@@ -110,7 +119,7 @@ const AddPackage = () => {
 						{...register("description", { required: true })}
 					/>
 				</FloatingLabel>
-				<Button type='submit' className='my-2 mx-1'>
+				<Button type='submit' className='my-2 mx-1 bg-1 border-11'>
 					Add Product
 				</Button>
 			</Form>

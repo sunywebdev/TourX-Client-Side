@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "./Banner.css";
 
 const Banner = () => {
+	const [slides, setSlides] = useState([]);
+	useEffect(() => {
+		fetch(`https://morning-garden-49984.herokuapp.com/slides`)
+			.then((res) => res.json())
+			.then((data) => setSlides(data));
+	}, []);
 	return (
 		<div>
 			<Carousel fade>
-				{Array.from({ length: 5 }).map((_, idx) => (
+				{slides?.map((slide) => (
 					<Carousel.Item className='carousel  position-relative'>
-						<img
-							className='d-block w-100'
-							src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/enjoying-the-view-royalty-free-image-1582838254.jpg'
-							alt='First slide'
-						/>
+						<img className='d-block w-100' src={slide?.photo} alt='' />
 						<Carousel.Caption className='position-absolute top-50 '>
 							<div className='text-light'>
-								<h1 className='display-1 fw-bold'>Love where you're going</h1>
-								<h5>Book incredible things to do around the world.</h5>
+								<h1 className='display-1 fw-bold'>{slide?.text}</h1>
+								<h5>{slide?.subText}</h5>
 								<p className='mt-4'>
-									<a className='btn btn-lg btn-primary' href='#Packages'>
+									<a className='btn btn-lg bg-1 text-light' href='#Packages'>
 										Our Packages
 									</a>
 								</p>

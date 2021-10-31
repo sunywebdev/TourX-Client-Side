@@ -69,17 +69,18 @@ const SinglePackage = () => {
 					<img variant='top' src={packages?.photo} alt='' className='w-100' />
 					<div className='row py-3 gy-3 '>
 						<div className='col-md-8'>
-							<h2>{packages?.productName}</h2>
+							<h2 className='text-color-1'>{packages?.productName}</h2>
 							<p className='mb-1'>
-								<i className='fas fa-map-marker-alt'></i> {packages?.place}
+								<i className='fas fa-map-marker-alt text-color-1'></i>{" "}
+								{packages?.place}
 							</p>
 						</div>
 						<div className='col-md-4'>
 							<p className='mb-1'>
 								<Rating
 									initialRating={packages?.productReviewAvg}
-									emptySymbol='far fa-star '
-									fullSymbol='fas fa-star '
+									emptySymbol='far fa-star text-color-1'
+									fullSymbol='fas fa-star text-color-1'
 									readonly
 								/>
 								&nbsp;
@@ -92,14 +93,16 @@ const SinglePackage = () => {
 					</div>
 					<hr />
 					<div className='row gy-3 justify-content-around'>
-						<div className='col-6 col-md-2'>
+						<div className='col-6 col-md-2 text-color-1'>
 							<Table className='border-0 align-middle '>
 								<tbody className='border-0'>
 									<tr>
 										<td className='border-0 p-0 text-center' rowSpan='2'>
-											<i className='far fa-clock fa-2x'></i>
+											<i className='far fa-clock fa-2x text-color-1'></i>
 										</td>
-										<td className='border-0 p-0 fw-bold'>Duration</td>
+										<td className='border-0 p-0 fw-bold text-color-1'>
+											Duration
+										</td>
 									</tr>
 
 									<tr>
@@ -115,9 +118,11 @@ const SinglePackage = () => {
 								<tbody className='border-0'>
 									<tr>
 										<td className='border-0 p-0 text-center' rowSpan='2'>
-											<i class='fas fa-shoe-prints fa-2x'></i>
+											<i class='fas fa-shoe-prints fa-2x text-color-1'></i>
 										</td>
-										<td className='border-0 p-0 fw-bold'>Tour Type</td>
+										<td className='border-0 p-0 fw-bold text-color-1'>
+											Tour Type
+										</td>
 									</tr>
 
 									<tr>
@@ -131,9 +136,11 @@ const SinglePackage = () => {
 								<tbody className='border-0'>
 									<tr>
 										<td className='border-0 p-0 text-center' rowSpan='2'>
-											<i class='fas fa-language fa-2x'></i>
+											<i class='fas fa-language fa-2x text-color-1'></i>
 										</td>
-										<td className='border-0 p-0 fw-bold'>Language</td>
+										<td className='border-0 p-0 fw-bold text-color-1'>
+											Language
+										</td>
 									</tr>
 
 									<tr>
@@ -147,9 +154,11 @@ const SinglePackage = () => {
 								<tbody className='border-0'>
 									<tr>
 										<td className='border-0 p-0 text-center' rowSpan='2'>
-											<i class='fas fa-users fa-2x'></i>
+											<i class='fas fa-users fa-2x text-color-1'></i>
 										</td>
-										<td className='border-0 p-0 fw-bold'>Group Size</td>
+										<td className='border-0 p-0 fw-bold text-color-1'>
+											Group Size
+										</td>
 									</tr>
 
 									<tr>
@@ -160,21 +169,21 @@ const SinglePackage = () => {
 						</div>
 					</div>
 					<hr className='mt-0' />
-					<h2>Overview</h2>
+					<h2 className='text-color-1'>Overview</h2>
 					<p>{packages?.description}</p>
 				</div>
 				<div className='col-md-3'>
 					<Form onSubmit={handleSubmit(onSubmit)} className=' sticky-md-top'>
-						<Card className='cart text-center align-items-center'>
+						<Card className='cart text-center align-items-center border-11'>
 							<ListGroup variant='flush' className='border-0'>
 								<ListGroup.Item className='border-0'>
-									<h4 className='fw-bold'>
+									<h4 className='fw-bold text-color-1'>
 										Starts From ${packages?.productPrice}
 									</h4>
 								</ListGroup.Item>
 								<ListGroup.Item>
-									<h6>
-										<i class='far fa-calendar-alt'></i> Tour Date
+									<h6 className='fw-bold text-color-1'>
+										<i class='far fa-calendar-alt text-color-1'></i> Tour Date
 									</h6>
 									<span>
 										<DatePicker
@@ -185,7 +194,7 @@ const SinglePackage = () => {
 									</span>
 								</ListGroup.Item>
 								<ListGroup.Item>
-									<h6>
+									<h6 className='fw-bold text-color-1'>
 										<i class='fas fa-user-alt'></i> Adult
 									</h6>
 									<span>
@@ -196,7 +205,7 @@ const SinglePackage = () => {
 														adultQuantity > 0 &&
 														setAdultQuantity(adultQuantity - 1)
 													}
-													class='fas fa-minus-circle fa-2x text-danger '></i>
+													class='fas fa-minus-circle fa-2x text-color-1 '></i>
 											</ListGroup.Item>
 											<ListGroup.Item>
 												<input
@@ -210,14 +219,14 @@ const SinglePackage = () => {
 											<ListGroup.Item>
 												<i
 													onClick={() => setAdultQuantity(adultQuantity + 1)}
-													class='fas fa-plus-circle fa-2x text-danger'></i>
+													class='fas fa-plus-circle fa-2x text-color-1'></i>
 											</ListGroup.Item>
 										</ListGroup>
 									</span>
 								</ListGroup.Item>
 							</ListGroup>
 							<ListGroup.Item className='border-0'>
-								<h6>
+								<h6 className='fw-bold text-color-1'>
 									<i class='fas fa-baby'></i> Child
 								</h6>
 								<span>
@@ -228,7 +237,7 @@ const SinglePackage = () => {
 													childQuantity > 0 &&
 													setChildQuantity(childQuantity - 1)
 												}
-												class='fas fa-minus-circle fa-2x text-danger '></i>
+												class='fas fa-minus-circle fa-2x text-color-1 '></i>
 										</ListGroup.Item>
 										<ListGroup.Item>
 											<input
@@ -242,13 +251,13 @@ const SinglePackage = () => {
 										<ListGroup.Item>
 											<i
 												onClick={() => setChildQuantity(childQuantity + 1)}
-												class='fas fa-plus-circle fa-2x text-danger'></i>
+												class='fas fa-plus-circle fa-2x text-color-1'></i>
 										</ListGroup.Item>
 									</ListGroup>
 								</span>
 							</ListGroup.Item>
 							<ListGroup.Item className='border-0'>
-								<Button className='w-100' type='submit'>
+								<Button className='w-100 bg-1 border-11' type='submit'>
 									Book Now
 								</Button>
 							</ListGroup.Item>
@@ -256,6 +265,11 @@ const SinglePackage = () => {
 					</Form>
 				</div>
 			</div>
+			<Link to='/' className='text-decoration-none text-light'>
+				<Button className='my-4 px-5 bg-1 border-11'>
+					<i className='fas fa-arrow-circle-left me-3'></i>Back To Home
+				</Button>
+			</Link>
 		</Container>
 	);
 };

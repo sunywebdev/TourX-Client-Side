@@ -61,42 +61,51 @@ const Reviews = () => {
 				<h5>What Our Traveller Say About Us</h5>
 			</div>
 			{comments.length > 0 ? (
-				<Slider {...settings}>
-					{comments.map((comment) => (
-						<div key={comment?._id} className='mb-3 p-2 p-md-3 '>
-							<div
-								className='p-4 border border-2'
-								style={{ borderRadius: "19px" }}>
-								<div className='d-flex justify-content-between align-items-center my-2'>
-									<div>
-										<img
-											src={comment?.photoLink}
-											alt=''
-											className='rounded-circle border border-5 border-11'
-											style={{ width: "95px" }}
-										/>
+				<>
+					<Slider {...settings}>
+						{comments.map((comment) => (
+							<div key={comment?._id} className='mb-3 p-2 p-md-3 '>
+								<div
+									className='p-4 border border-2 border-11'
+									style={{ borderRadius: "19px" }}>
+									<div className='d-flex justify-content-between align-items-center my-2'>
+										<div>
+											<img
+												src={comment?.photoLink}
+												alt=''
+												className='rounded-circle border border-5 border-11'
+												style={{ width: "95px" }}
+											/>
+										</div>
+										<div className='rating'>
+											<h5 className='text-color-1 fw-bold'>
+												{comment?.userName}
+											</h5>
+											<Rating
+												className='fs-6 text-color-1 text-start'
+												emptySymbol='far fa-star '
+												fullSymbol='fas fa-star '
+												initialRating={comment?.star}
+												readonly
+											/>
+										</div>
+										<div>
+											<i className='fas fa-quote-right fa-3x text-color-1'></i>
+										</div>
 									</div>
-									<div className='rating'>
-										<h5 className='text-1 fw-bold'>{comment?.userName}</h5>
-										<Rating
-											className='fs-6 text-warning text-start'
-											emptySymbol='far fa-star '
-											fullSymbol='fas fa-star '
-											initialRating={comment?.star}
-											readonly
-										/>
+									<div className='text-start'>
+										<p>{comment?.comment}</p>
 									</div>
-									<div>
-										<i className='fas fa-quote-right fa-3x'></i>
-									</div>
-								</div>
-								<div className='text-start'>
-									<p>{comment?.comment}</p>
 								</div>
 							</div>
-						</div>
-					))}
-				</Slider>
+						))}
+					</Slider>
+					<Link to='/addcomments' className='text-decoration-none text-light'>
+						<Button className='my-2 px-5 bg-1 border-11 fw-bold'>
+							<i class='far fa-comment me-2'></i> Share Your Experiance
+						</Button>
+					</Link>
+				</>
 			) : (
 				<>
 					<Placeholder as='p' animation='glow'>
@@ -107,11 +116,6 @@ const Reviews = () => {
 					</Placeholder>
 				</>
 			)}
-			<Link to='/addcomments' className='text-decoration-none text-light'>
-				<Button className='my-4 px-5 bg-1 border-11'>
-					Share Your Experiance
-				</Button>
-			</Link>
 		</Container>
 	);
 };

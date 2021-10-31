@@ -6,7 +6,10 @@ import useAuth from "../../context/useAuth";
 const Header = () => {
 	const activeStyle = {
 		fontWeight: "bold",
-		color: "red",
+		color: "#FF7F47",
+	};
+	const navbar = {
+		color: "white",
 	};
 
 	const { user, logOut } = useAuth();
@@ -21,6 +24,7 @@ const Header = () => {
 			<Container>
 				<Navbar.Brand>
 					<Link
+						style={navbar}
 						activeStyle={activeStyle}
 						className='text-decoration-none fs-3'
 						to='/'>
@@ -32,6 +36,7 @@ const Header = () => {
 					<Nav className='me-auto'>
 						<Nav.Link>
 							<NavLink
+								style={navbar}
 								activeStyle={activeStyle}
 								className='text-decoration-none '
 								exact
@@ -43,6 +48,7 @@ const Header = () => {
 							<>
 								<Nav.Link>
 									<NavLink
+										style={navbar}
 										activeStyle={activeStyle}
 										className='text-decoration-none '
 										to='/login'>
@@ -51,31 +57,37 @@ const Header = () => {
 								</Nav.Link>
 								<Nav.Link>
 									<NavLink
+										style={navbar}
 										activeStyle={activeStyle}
 										className='text-decoration-none '
 										to='/SignUp'>
 										SignUp
 									</NavLink>
 								</Nav.Link>
-							</>)
-						:
+							</>
+						) : (
 							<>
 								<Nav.Link>
-								<NavLink
-									activeStyle={activeStyle}
-									className='text-decoration-none '
-									to='/manageorders'>
-									Manage Orders
-								</NavLink>
-							</Nav.Link><Nav.Link>
 									<NavLink
+										style={navbar}
+										activeStyle={activeStyle}
+										className='text-decoration-none '
+										to='/manageorders'>
+										Manage Orders
+									</NavLink>
+								</Nav.Link>
+								<Nav.Link>
+									<NavLink
+										style={navbar}
 										activeStyle={activeStyle}
 										className='text-decoration-none '
 										to='/orders'>
 										My Orders
 									</NavLink>
-								</Nav.Link><Nav.Link>
+								</Nav.Link>
+								<Nav.Link>
 									<NavLink
+										style={navbar}
 										activeStyle={activeStyle}
 										className='text-decoration-none '
 										to='/addpackage'>
@@ -83,10 +95,11 @@ const Header = () => {
 									</NavLink>
 								</Nav.Link>
 							</>
-						}
+						)}
 						{user?.email === "suny.w68@gmail.com" && (
 							<Nav.Link>
 								<NavLink
+									style={navbar}
 									activeStyle={activeStyle}
 									className='text-decoration-none '
 									to='/admin'>
@@ -98,7 +111,7 @@ const Header = () => {
 					{user?.email && (
 						<Nav>
 							<Nav.Link>
-								<span className='fw-bold me-3 text-1'>
+								<span className='fw-bold me-3 text-1' style={navbar}>
 									Welcome, {user?.displayName}
 								</span>
 							</Nav.Link>

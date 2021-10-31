@@ -3,12 +3,12 @@ import React from "react";
 import { FloatingLabel, Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-const AddPackage = () => {
+const AddSlide = () => {
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
 		console.log(data);
 		axios
-			.post("https://morning-garden-49984.herokuapp.com/knowledge", data)
+			.post("https://morning-garden-49984.herokuapp.com/slides", data)
 			.then(function (response) {
 				alert("Successfully added");
 			})
@@ -19,61 +19,44 @@ const AddPackage = () => {
 
 	return (
 		<Container>
-			<h2 className='fw-bold py-4 text-color-1'>Add a new Knowledge</h2>
+			<h2 className='fw-bold py-4 text-color-1'>Add a new Slide</h2>
 			<Form className='col-md-7 mx-auto' onSubmit={handleSubmit(onSubmit)}>
-				<FloatingLabel
-					controlId='floatingInput'
-					label='Knowledge ID'
-					className='mb-3'>
+				<FloatingLabel controlId='floatingInput' label='text' className='mb-3'>
 					<Form.Control
 						className='border-11'
 						type='text'
-						placeholder='Knowledge ID'
-						{...register("knowledgeId", { required: true })}
+						placeholder='text'
+						{...register("text", { required: true })}
 					/>
 				</FloatingLabel>
 				<FloatingLabel
 					controlId='floatingInput'
-					label='Knowledge Photo link'
+					label='subText'
 					className='mb-3'>
 					<Form.Control
 						className='border-11'
 						type='text'
-						placeholder='Knowledge Photo link'
-						{...register("photoLink", { required: true })}
+						placeholder='subText'
+						{...register("subText", { required: true })}
 					/>
 				</FloatingLabel>
 				<FloatingLabel
 					controlId='floatingInput'
-					label='Knowledge Title'
+					label='Product Photo URL'
 					className='mb-3'>
 					<Form.Control
 						className='border-11'
 						type='text'
-						placeholder='Knowledge Title'
-						{...register("title", { required: true })}
-					/>
-				</FloatingLabel>
-
-				<FloatingLabel
-					controlId='floatingTextarea2'
-					label='Knowledge Description'
-					className='mb-3'>
-					<Form.Control
-						className='border-11'
-						type='text'
-						as='textarea'
-						placeholder='Knowledge Description'
-						style={{ height: "100px" }}
-						{...register("description", { required: true })}
+						placeholder='Product Photo URL'
+						{...register("photo", { required: true })}
 					/>
 				</FloatingLabel>
 				<Button type='submit' className='my-2 mx-1 bg-1 border-11'>
-					Add Knowledge
+					Add Slide
 				</Button>
 			</Form>
 		</Container>
 	);
 };
 
-export default AddPackage;
+export default AddSlide;

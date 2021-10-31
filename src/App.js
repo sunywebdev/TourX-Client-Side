@@ -21,6 +21,7 @@ import OrderPage from "./Components/Pages/OrderPage/OrderPage";
 import Orders from "./Components/Pages/Orders/Orders";
 import ManageOrders from "./Components/Pages/ManageOrders/ManageOrders";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AddSlide from "./Components/Pages/AddSlide/AddSlide";
 
 function App() {
 	return (
@@ -56,14 +57,17 @@ function App() {
 						<PrivateRoute path='/order/:productId'>
 							<OrderPage></OrderPage>
 						</PrivateRoute>
-						<PrivateRoute path='/knowledges/:knowledgeId'>
+						<Route path='/knowledges/:knowledgeId'>
 							<SingleKnowledge></SingleKnowledge>
-						</PrivateRoute>
+						</Route>
 						<PrivateRoute path='/news/:newsId'>
 							<SingleNews></SingleNews>
 						</PrivateRoute>
 						<PrivateRoute path='/addpackage'>
 							<AddPackage></AddPackage>
+						</PrivateRoute>
+						<PrivateRoute path='/addslide'>
+							<AddSlide></AddSlide>
 						</PrivateRoute>
 						<PrivateRoute path='/addnews'>
 							<AddNews></AddNews>

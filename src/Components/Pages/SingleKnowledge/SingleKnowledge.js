@@ -13,16 +13,17 @@ const SingleKnowledge = () => {
 	}, []);
 	console.log(knowledgeId);
 	return (
-		<Container className=' mt-2'>
-			<img
-				variant='top'
-				src={knowledge?.photoLink}
-				alt=''
-				className='w-100'
-				style={{ maxHeight: "80vh" }}
-			/>
-			<h2 className='mt-4'>{knowledge?.title}</h2>
-			<p>{knowledge?.description}</p>
+		<Container className='mt-2 text-color-1'>
+			<h2 className='fw-bold py-3 mt-2'>{knowledge?.title}</h2>
+			<div className='clearfix'>
+				<img
+					src={knowledge?.photoLink}
+					className='col-md-4 mb-2 mx-md-3 rounded float-sm-start w-50'
+					alt='...'
+				/>
+				<p className='text-secondary text-start'>{knowledge?.description}</p>
+			</div>
+
 			<Link to='/' className='text-decoration-none text-light'>
 				<Button className='my-4 px-5 bg-1 border-11'>
 					<i className='fas fa-arrow-circle-left me-3'></i>Back To Home
