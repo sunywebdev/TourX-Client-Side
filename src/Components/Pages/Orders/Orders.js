@@ -1,25 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Accordion, Container, Form, Table, Button } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+import { Container, Table, Button } from "react-bootstrap";
 import useAuth from "../../../context/useAuth";
 
 const Orders = () => {
 	const { user } = useAuth();
 	const [packages, setPackages] = useState([]);
+	const [state, setState] = useState([]);
 	useEffect(() => {
-		fetch(`https://morning-garden-49984.herokuapp.com/confirmed/${user?.uid}`)
+		fetch(`http://localhost:5000/confirmed/${user?.uid}`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
-	}, []);
+	}, [state, user?.uid]);
 
 	const deleted = (id) => {
 		const proceed = window.confirm("Are you sure you want to delete");
 		if (proceed) {
 			axios
-				.delete(`https://morning-garden-49984.herokuapp.com/delete/${id}`)
+				.delete(`http://localhost:5000/delete/${id}`)
 				.then(function (response) {
 					alert("Successfully deleted");
+					setState(id);
 				})
 				.catch(function (error) {
 					console.log(error);

@@ -25,7 +25,6 @@ const Login = () => {
 	};
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
 		signInWithEmailPassword(auth, data.email, data.password).then((user) => {
 			// eslint-disable-next-line no-lone-blocks
 			{
@@ -36,13 +35,14 @@ const Login = () => {
 
 	return (
 		<Container className='mt-5'>
-			<h2 className='fw-bold py-4'>Login</h2>
+			<h2 className='fw-bold py-4  text-color-1'>Login</h2>
 			<Form className='col-md-7 mx-auto' onSubmit={handleSubmit(onSubmit)}>
 				<FloatingLabel
 					controlId='floatingInput'
 					label='Email address'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='email'
 						placeholder='name@example.com'
 						{...register("email", { required: true })}
@@ -53,6 +53,7 @@ const Login = () => {
 					label='Password'
 					className='mb-3'>
 					<Form.Control
+						className='border-11'
 						type='password'
 						placeholder='Password'
 						{...register("password", { required: true })}
@@ -62,10 +63,12 @@ const Login = () => {
 					{errorMsg}
 					{errorMsg2}
 				</p>
-				<Button type='submit' className='my-2 mx-1'>
+				<Button type='submit' className='my-2 mx-1 bg-1 border-11'>
 					Login
 				</Button>
-				<Button onClick={handleGoogleLogin} className='my-2 mx-1'>
+				<Button
+					onClick={handleGoogleLogin}
+					className='my-2 mx-1 bg-1 border-11'>
 					Login With Google
 				</Button>
 				<p>

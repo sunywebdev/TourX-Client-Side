@@ -45,10 +45,11 @@ const SignUp = () => {
 
 	return (
 		<Container className='mt-5'>
-			<h2 className='fw-bold py-4'>Register</h2>
+			<h2 className='fw-bold py-4  text-color-1'>Register</h2>
 			<Form className='col-md-7 mx-auto' onSubmit={handleSubmit(onSubmit)}>
 				<FloatingLabel controlId='floatingInput' label='Name' className='mb-3'>
 					<Form.Control
+						className='border-11'
 						defaultValue={user?.displayName}
 						type='text'
 						placeholder='John Doe'
@@ -95,10 +96,12 @@ const SignUp = () => {
 					{errorMsg}
 					{errorMsg2}
 				</p>
-				<Button type='submit' className='my-2 mx-1'>
+				<Button type='submit' className='my-2 mx-1 bg-1 border-11'>
 					Register A New Account
 				</Button>
-				<Button onClick={handleGoogleLogin} className='my-2 mx-1'>
+				<Button
+					onClick={handleGoogleLogin}
+					className='my-2 mx-1 bg-1 border-11'>
 					Register With Google
 				</Button>
 				<p>

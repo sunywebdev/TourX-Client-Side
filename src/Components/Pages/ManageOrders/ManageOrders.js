@@ -1,29 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Accordion, Container, Form, Table, Button } from "react-bootstrap";
+import { Container, Form, Table, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../context/useAuth";
 
 const ManageOrders = () => {
 	const { user } = useAuth();
 	const [packages, setPackages] = useState([]);
+	const [state, setState] = useState([]);
+	const [states, setStates] = useState([]);
 	useEffect(() => {
-		fetch(`https://morning-garden-49984.herokuapp.com/pending`)
+		fetch(`http://localhost:5000/pending`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
-	}, []);
+	}, [state, states]);
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
 		axios
-			.put(
-				`https://morning-garden-49984.herokuapp.com/pendingconfirm/${data?.id}`,
-				{
-					orderStatus: "Confirm",
-				},
-			)
+			.put(`http://localhost:5000/pendingconfirm/${data?.id}`, {
+				orderStatus: "Confirm",
+			})
 			.then(function (response) {
 				alert("Successfully Updated");
+				setState(data);
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -33,9 +32,10 @@ const ManageOrders = () => {
 		const proceed = window.confirm("Are you sure you want to delete");
 		if (proceed) {
 			axios
-				.delete(`https://morning-garden-49984.herokuapp.com/delete/${id}`)
+				.delete(`http://localhost:5000/delete/${id}`)
 				.then(function (response) {
 					alert("Successfully deleted");
+					setStates(id);
 				})
 				.catch(function (error) {
 					console.log(error);

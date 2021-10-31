@@ -6,9 +6,8 @@ import { useForm } from "react-hook-form";
 const AddSlide = () => {
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
 		axios
-			.post("https://morning-garden-49984.herokuapp.com/slides", data)
+			.post("http://localhost:5000/slides", data)
 			.then(function (response) {
 				alert("Successfully added");
 			})

@@ -13,11 +13,10 @@ const Header = () => {
 	};
 
 	const { user, logOut } = useAuth();
-	console.log(user);
 	return (
 		<Navbar
 			collapseOnSelect
-			expand='md'
+			expand='lg'
 			bg='dark'
 			variant='dark'
 			className='sticky-top'>

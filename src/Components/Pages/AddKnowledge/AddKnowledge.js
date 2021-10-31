@@ -6,9 +6,8 @@ import { useForm } from "react-hook-form";
 const AddPackage = () => {
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
 		axios
-			.post("https://morning-garden-49984.herokuapp.com/knowledge", data)
+			.post("http://localhost:5000/knowledge", data)
 			.then(function (response) {
 				alert("Successfully added");
 			})

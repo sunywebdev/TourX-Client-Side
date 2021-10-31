@@ -8,9 +8,8 @@ const AddPackage = () => {
 	const { user } = useAuth();
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
-		console.log(data);
 		axios
-			.post("https://morning-garden-49984.herokuapp.com/comments", data)
+			.post("http://localhost:5000/comments", data)
 			.then(function (response) {
 				alert("Successfully added");
 			})

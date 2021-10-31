@@ -25,7 +25,6 @@ const Reviews = () => {
 					slidesToShow: 2,
 					slidesToScroll: 1,
 					infinite: true,
-					dots: true,
 					adaptiveHeight: false,
 				},
 			},
@@ -50,7 +49,7 @@ const Reviews = () => {
 
 	const [comments, setComments] = useState([]);
 	useEffect(() => {
-		fetch(`https://morning-garden-49984.herokuapp.com/comments`)
+		fetch(`http://localhost:5000/comments`)
 			.then((res) => res.json())
 			.then((data) => setComments(data));
 	}, []);
@@ -102,7 +101,7 @@ const Reviews = () => {
 					</Slider>
 					<Link to='/addcomments' className='text-decoration-none text-light'>
 						<Button className='my-2 px-5 bg-1 border-11 fw-bold'>
-							<i class='far fa-comment me-2'></i> Share Your Experiance
+							<i className='far fa-comment me-2'></i> Share Your Experiance
 						</Button>
 					</Link>
 				</>

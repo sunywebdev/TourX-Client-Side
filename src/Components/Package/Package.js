@@ -14,11 +14,10 @@ import { Link } from "react-router-dom";
 const Package = () => {
 	const [packages, setPackages] = useState([]);
 	useEffect(() => {
-		fetch(`https://morning-garden-49984.herokuapp.com/packages`)
+		fetch(`http://localhost:5000/packages`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
 	}, []);
-	console.log(packages);
 	return (
 		<Container className='mt-5' id='Packages'>
 			<div className='section-head my-4'>

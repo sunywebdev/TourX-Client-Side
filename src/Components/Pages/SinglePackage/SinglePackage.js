@@ -26,7 +26,7 @@ const SinglePackage = () => {
 	const [packages, setPackages] = useState([]);
 
 	useEffect(() => {
-		fetch(`https://morning-garden-49984.herokuapp.com/packages/${productId}`)
+		fetch(`http://localhost:5000/packages/${productId}`)
 			.then((res) => res.json())
 			.then((data) => setPackages(data));
 	}, []);
@@ -49,10 +49,9 @@ const SinglePackage = () => {
 		orderTime: new Date().toLocaleString() + "",
 		orderStatus: "Pending",
 	};
-	console.log(details);
 	const onSubmit = (data) => {
 		axios
-			.post("https://morning-garden-49984.herokuapp.com/pending", details)
+			.post("http://localhost:5000/pending", details)
 			.then(function (response) {
 				alert("Successfully added, Going to preview Or Update page");
 				history.push(`/order/${packages?.productId}`);
@@ -118,7 +117,7 @@ const SinglePackage = () => {
 								<tbody className='border-0'>
 									<tr>
 										<td className='border-0 p-0 text-center' rowSpan='2'>
-											<i class='fas fa-shoe-prints fa-2x text-color-1'></i>
+											<i className='fas fa-shoe-prints fa-2x text-color-1'></i>
 										</td>
 										<td className='border-0 p-0 fw-bold text-color-1'>
 											Tour Type
@@ -136,7 +135,7 @@ const SinglePackage = () => {
 								<tbody className='border-0'>
 									<tr>
 										<td className='border-0 p-0 text-center' rowSpan='2'>
-											<i class='fas fa-language fa-2x text-color-1'></i>
+											<i className='fas fa-language fa-2x text-color-1'></i>
 										</td>
 										<td className='border-0 p-0 fw-bold text-color-1'>
 											Language
@@ -154,7 +153,7 @@ const SinglePackage = () => {
 								<tbody className='border-0'>
 									<tr>
 										<td className='border-0 p-0 text-center' rowSpan='2'>
-											<i class='fas fa-users fa-2x text-color-1'></i>
+											<i className='fas fa-users fa-2x text-color-1'></i>
 										</td>
 										<td className='border-0 p-0 fw-bold text-color-1'>
 											Group Size
@@ -183,7 +182,8 @@ const SinglePackage = () => {
 								</ListGroup.Item>
 								<ListGroup.Item>
 									<h6 className='fw-bold text-color-1'>
-										<i class='far fa-calendar-alt text-color-1'></i> Tour Date
+										<i className='far fa-calendar-alt text-color-1'></i> Tour
+										Date
 									</h6>
 									<span>
 										<DatePicker
@@ -195,7 +195,7 @@ const SinglePackage = () => {
 								</ListGroup.Item>
 								<ListGroup.Item>
 									<h6 className='fw-bold text-color-1'>
-										<i class='fas fa-user-alt'></i> Adult
+										<i className='fas fa-user-alt'></i> Adult
 									</h6>
 									<span>
 										<ListGroup horizontal className='border-0'>
@@ -205,7 +205,7 @@ const SinglePackage = () => {
 														adultQuantity > 0 &&
 														setAdultQuantity(adultQuantity - 1)
 													}
-													class='fas fa-minus-circle fa-2x text-color-1 '></i>
+													className='fas fa-minus-circle fa-2x text-color-1 '></i>
 											</ListGroup.Item>
 											<ListGroup.Item>
 												<input
@@ -219,7 +219,7 @@ const SinglePackage = () => {
 											<ListGroup.Item>
 												<i
 													onClick={() => setAdultQuantity(adultQuantity + 1)}
-													class='fas fa-plus-circle fa-2x text-color-1'></i>
+													className='fas fa-plus-circle fa-2x text-color-1'></i>
 											</ListGroup.Item>
 										</ListGroup>
 									</span>
@@ -227,7 +227,7 @@ const SinglePackage = () => {
 							</ListGroup>
 							<ListGroup.Item className='border-0'>
 								<h6 className='fw-bold text-color-1'>
-									<i class='fas fa-baby'></i> Child
+									<i className='fas fa-baby'></i> Child
 								</h6>
 								<span>
 									<ListGroup horizontal className='border-0'>
@@ -237,7 +237,7 @@ const SinglePackage = () => {
 													childQuantity > 0 &&
 													setChildQuantity(childQuantity - 1)
 												}
-												class='fas fa-minus-circle fa-2x text-color-1 '></i>
+												className='fas fa-minus-circle fa-2x text-color-1 '></i>
 										</ListGroup.Item>
 										<ListGroup.Item>
 											<input
@@ -251,7 +251,7 @@ const SinglePackage = () => {
 										<ListGroup.Item>
 											<i
 												onClick={() => setChildQuantity(childQuantity + 1)}
-												class='fas fa-plus-circle fa-2x text-color-1'></i>
+												className='fas fa-plus-circle fa-2x text-color-1'></i>
 										</ListGroup.Item>
 									</ListGroup>
 								</span>

@@ -7,11 +7,11 @@ const SingleKnowledge = () => {
 	const { knowledgeId } = useParams();
 	const [knowledge, setKnowledge] = useState([]);
 	useEffect(() => {
-		fetch(`https://morning-garden-49984.herokuapp.com/knowledge/${knowledgeId}`)
+		fetch(`http://localhost:5000/knowledge/${knowledgeId}`)
 			.then((res) => res.json())
 			.then((data) => setKnowledge(data));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	console.log(knowledgeId);
 	return (
 		<Container className='mt-2 text-color-1'>
 			<h2 className='fw-bold py-3 mt-2'>{knowledge?.title}</h2>
