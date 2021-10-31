@@ -96,7 +96,7 @@ const Header = () => {
 								</Nav.Link>
 							</>
 						)}
-						{user?.email === "suny.w68@gmail.com" && (
+						{user?.email === "admin@tourx.com" && (
 							<Nav.Link>
 								<NavLink
 									style={navbar}

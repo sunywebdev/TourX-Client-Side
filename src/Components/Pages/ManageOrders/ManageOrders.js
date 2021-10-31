@@ -58,7 +58,7 @@ const ManageOrders = () => {
 						<th>Name</th>
 						<th>Going To</th>
 						<th>Tour Status</th>
-						{user?.email === "suny.w68@gmail.com" && <th>Delete(Admin)</th>}
+						{user?.email === "admin@tourx.com" && <th>Delete(Admin)</th>}
 					</tr>
 				</thead>
 				<tbody>
@@ -102,7 +102,7 @@ const ManageOrders = () => {
 									<h6> Confirmed </h6>
 								)}
 							</td>
-							{user?.email === "suny.w68@gmail.com" && (
+							{user?.email === "admin@tourx.com" && (
 								<td>
 									<Button
 										onClick={() => deleted(package1?._id)}
