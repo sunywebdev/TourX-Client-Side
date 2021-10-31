@@ -20,6 +20,7 @@ import Admin from "./Components/Pages/Admin/Admin";
 import OrderPage from "./Components/Pages/OrderPage/OrderPage";
 import Orders from "./Components/Pages/Orders/Orders";
 import ManageOrders from "./Components/Pages/ManageOrders/ManageOrders";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
 	return (
@@ -37,42 +38,42 @@ function App() {
 						<Route path='/signup'>
 							<SignUp></SignUp>
 						</Route>
-						<Route path='/admin'>
+						<PrivateRoute path='/admin'>
 							<Admin></Admin>
-						</Route>
-						<Route path='/manageorders'>
+						</PrivateRoute>
+						<PrivateRoute path='/manageorders'>
 							<ManageOrders></ManageOrders>
-						</Route>
-						<Route path='/orders'>
+						</PrivateRoute>
+						<PrivateRoute path='/orders'>
 							<Orders></Orders>
-						</Route>
-						<Route path='/manageorders'>
+						</PrivateRoute>
+						<PrivateRoute path='/manageorders'>
 							<Orders></Orders>
-						</Route>
-						<Route path='/packages/:productId'>
+						</PrivateRoute>
+						<PrivateRoute path='/packages/:productId'>
 							<SinglePackage></SinglePackage>
-						</Route>
-						<Route path='/order/:productId'>
+						</PrivateRoute>
+						<PrivateRoute path='/order/:productId'>
 							<OrderPage></OrderPage>
-						</Route>
-						<Route path='/knowledges/:knowledgeId'>
+						</PrivateRoute>
+						<PrivateRoute path='/knowledges/:knowledgeId'>
 							<SingleKnowledge></SingleKnowledge>
-						</Route>
-						<Route path='/news/:newsId'>
+						</PrivateRoute>
+						<PrivateRoute path='/news/:newsId'>
 							<SingleNews></SingleNews>
-						</Route>
-						<Route path='/addpackage'>
+						</PrivateRoute>
+						<PrivateRoute path='/addpackage'>
 							<AddPackage></AddPackage>
-						</Route>
-						<Route path='/addnews'>
+						</PrivateRoute>
+						<PrivateRoute path='/addnews'>
 							<AddNews></AddNews>
-						</Route>
-						<Route path='/addcomments'>
+						</PrivateRoute>
+						<PrivateRoute path='/addcomments'>
 							<AddComments></AddComments>
-						</Route>
-						<Route path='/addknowledge'>
+						</PrivateRoute>
+						<PrivateRoute path='/addknowledge'>
 							<AddKnowledge></AddKnowledge>
-						</Route>
+						</PrivateRoute>
 						<Route path='*'>
 							<NotFound></NotFound>
 						</Route>

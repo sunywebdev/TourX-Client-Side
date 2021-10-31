@@ -20,7 +20,7 @@ const Login = () => {
 			: "";
 	const handleGoogleLogin = () => {
 		signInUsingGoogle().then((result) => {
-			history.push(-2);
+			history.push(-1);
 		});
 	};
 	const { register, handleSubmit } = useForm();
@@ -28,9 +28,8 @@ const Login = () => {
 		console.log(data);
 		signInWithEmailPassword(auth, data.email, data.password).then((user) => {
 			// eslint-disable-next-line no-lone-blocks
-			{
-				user && history.push(location?.state?.from || "/home");
-			}
+			history.push(-1);
+			
 		});
 	};
 

@@ -39,7 +39,7 @@ const Header = () => {
 								Home
 							</NavLink>
 						</Nav.Link>
-						{!user?.uid && (
+						{!user?.uid ? (
 							<>
 								<Nav.Link>
 									<NavLink
@@ -57,32 +57,33 @@ const Header = () => {
 										SignUp
 									</NavLink>
 								</Nav.Link>
+							</>)
+						:
+							<>
+								<Nav.Link>
+								<NavLink
+									activeStyle={activeStyle}
+									className='text-decoration-none '
+									to='/manageorders'>
+									Manage Orders
+								</NavLink>
+							</Nav.Link><Nav.Link>
+									<NavLink
+										activeStyle={activeStyle}
+										className='text-decoration-none '
+										to='/orders'>
+										My Orders
+									</NavLink>
+								</Nav.Link><Nav.Link>
+									<NavLink
+										activeStyle={activeStyle}
+										className='text-decoration-none '
+										to='/addpackage'>
+										Add Tour Package
+									</NavLink>
+								</Nav.Link>
 							</>
-						)}
-						<Nav.Link>
-							<NavLink
-								activeStyle={activeStyle}
-								className='text-decoration-none '
-								to='/manageorders'>
-								Manage Orders
-							</NavLink>
-						</Nav.Link>
-						<Nav.Link>
-							<NavLink
-								activeStyle={activeStyle}
-								className='text-decoration-none '
-								to='/orders'>
-								My Orders
-							</NavLink>
-						</Nav.Link>
-						<Nav.Link>
-							<NavLink
-								activeStyle={activeStyle}
-								className='text-decoration-none '
-								to='/addpackage'>
-								Add Tour Package
-							</NavLink>
-						</Nav.Link>
+						}
 						{user?.email === "suny.w68@gmail.com" && (
 							<Nav.Link>
 								<NavLink
