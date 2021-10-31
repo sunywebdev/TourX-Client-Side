@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Reviews = () => {
 	const settings = {
-		dots: false,
+		dots: true,
 		infinite: true,
 		slidesToShow: 2,
 		slidesToScroll: 1,
@@ -16,7 +16,7 @@ const Reviews = () => {
 		speed: 700,
 		autoplaySpeed: 4000,
 		cssEase: "linear",
-		adaptiveHeight: false,
+		adaptiveHeight: true,
 		swipeToSlide: true,
 		responsive: [
 			{
@@ -25,7 +25,7 @@ const Reviews = () => {
 					slidesToShow: 2,
 					slidesToScroll: 1,
 					infinite: true,
-					adaptiveHeight: false,
+					adaptiveHeight: true,
 				},
 			},
 			{
@@ -100,7 +100,7 @@ const Reviews = () => {
 						))}
 					</Slider>
 					<Link to='/addcomments' className='text-decoration-none text-light'>
-						<Button className='my-2 px-5 bg-1 border-11 fw-bold'>
+						<Button className='mb-2 mt-4 px-5 bg-1 border-11 fw-bold'>
 							<i className='far fa-comment me-2'></i> Share Your Experiance
 						</Button>
 					</Link>

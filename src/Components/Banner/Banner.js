@@ -14,7 +14,9 @@ const Banner = () => {
 			{slides.length > 0 ? (
 				<Carousel fade>
 					{slides?.map((slide) => (
-						<Carousel.Item className='carousel  position-relative'>
+						<Carousel.Item
+							key={slide?._id}
+							className='carousel  position-relative'>
 							<img className='d-block w-100' src={slide?.photo} alt='' />
 							<Carousel.Caption className='position-absolute top-50 '>
 								<div className='text-light'>

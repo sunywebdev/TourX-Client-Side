@@ -19,8 +19,8 @@ const Header = () => {
 			expand='lg'
 			bg='dark'
 			variant='dark'
-			className='sticky-top'>
-			<Container>
+			className='sticky-top px-3 px-md-5'>
+			<>
 				<Navbar.Brand>
 					<Link
 						style={navbar}
@@ -43,6 +43,16 @@ const Header = () => {
 								Home
 							</NavLink>
 						</Nav.Link>
+						<Nav.Link>
+							<NavLink
+								style={navbar}
+								activeStyle={activeStyle}
+								className='text-decoration-none '
+								exact
+								to='/packages'>
+								Packages
+							</NavLink>
+						</Nav.Link>
 						{!user?.uid ? (
 							<>
 								<Nav.Link>
@@ -52,15 +62,6 @@ const Header = () => {
 										className='text-decoration-none '
 										to='/login'>
 										Login
-									</NavLink>
-								</Nav.Link>
-								<Nav.Link>
-									<NavLink
-										style={navbar}
-										activeStyle={activeStyle}
-										className='text-decoration-none '
-										to='/SignUp'>
-										SignUp
 									</NavLink>
 								</Nav.Link>
 							</>
@@ -134,7 +135,7 @@ const Header = () => {
 						</Nav>
 					)}
 				</Navbar.Collapse>
-			</Container>
+			</>
 		</Navbar>
 	);
 };

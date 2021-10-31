@@ -1,8 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Placeholder, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
 
 const News = () => {
+	const settings = {
+		dots: true,
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		autoplay: true,
+		speed: 700,
+		autoplaySpeed: 4000,
+		cssEase: "linear",
+		adaptiveHeight: true,
+		swipeToSlide: true,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					infinite: true,
+					adaptiveHeight: true,
+				},
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					initialSlide: 2,
+				},
+			},
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					adaptiveHeight: true,
+				},
+			},
+		],
+	};
 	const [news, setNews] = useState([]);
 	useEffect(() => {
 		fetch(`https://morning-garden-49984.herokuapp.com/news`)
@@ -10,7 +50,7 @@ const News = () => {
 			.then((data) => setNews(data));
 	}, []);
 	return (
-		<Container className='my-5'>
+		<Container className='my-5  overflow-hidden'>
 			<div className='section-head my-4'>
 				<h2 className='text-color-1'>News And Blogs</h2>
 				<h5>
@@ -20,10 +60,12 @@ const News = () => {
 			</div>
 
 			{news.length > 0 ? (
-				<Row xs={1} md={2} lg={3} className='g-4'>
+				<Slider {...settings}>
 					{news?.map((news1) => (
 						<Col key={news1?._id} className='text-start'>
-							<Card className=' border-11' style={{ borderRadius: "19px" }}>
+							<Card
+								className=' border-11 mx-2'
+								style={{ borderRadius: "19px" }}>
 								<div className='position-relative'>
 									<Card.Img
 										variant='top'
@@ -54,7 +96,7 @@ const News = () => {
 							</Card>
 						</Col>
 					))}
-				</Row>
+				</Slider>
 			) : (
 				<>
 					<Placeholder as='p' animation='glow'>

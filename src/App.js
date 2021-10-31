@@ -22,6 +22,7 @@ import Orders from "./Components/Pages/Orders/Orders";
 import ManageOrders from "./Components/Pages/ManageOrders/ManageOrders";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AddSlide from "./Components/Pages/AddSlide/AddSlide";
+import Packages from "./Components/Pages/Packages/Packages";
 
 function App() {
 	return (
@@ -50,6 +51,9 @@ function App() {
 						</PrivateRoute>
 						<PrivateRoute path='/manageorders'>
 							<Orders></Orders>
+						</PrivateRoute>
+						<PrivateRoute path='/packages'>
+							<Packages></Packages>
 						</PrivateRoute>
 						<PrivateRoute path='/packages/:productId'>
 							<SinglePackage></SinglePackage>

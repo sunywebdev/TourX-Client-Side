@@ -11,7 +11,7 @@ import {
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
-const Package = () => {
+const Packages = () => {
 	const [packages, setPackages] = useState([]);
 	useEffect(() => {
 		fetch(`https://morning-garden-49984.herokuapp.com/packages`)
@@ -19,7 +19,7 @@ const Package = () => {
 			.then((data) => setPackages(data));
 	}, []);
 	return (
-		<Container className='mt-5' id='Packages'>
+		<Container className='my-5' id='Packages'>
 			<div className='section-head my-4'>
 				<h2 className='text-color-1'>Choose Your Package</h2>
 				<h5>Select Your best Package For Your Travel</h5>
@@ -87,7 +87,7 @@ const Package = () => {
 								</Button>
 							</Card>
 						</Col>
-					)).slice(0,8)}
+					))}
 				</Row>
 			) : (
 				<>
@@ -103,4 +103,4 @@ const Package = () => {
 	);
 };
 
-export default Package;
+export default Packages;
